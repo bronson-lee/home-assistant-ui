@@ -1,0 +1,37 @@
+{
+  "name": "home-assistant-ui",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "yarn clean && yarn dist",
+    "clean": "run-script-os",
+    "clean:win32": "if exist src/server/dist rmdir /s /q src\\server\\dist",
+    "clean:default": "rm -rf ./src/server/dist",
+    "dist": "parcel build ./src/client/index.html --no-cache --dist-dir ./src/server/dist --public-url ./",
+    "start": "node ./src/server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react-dom": "^18.2.19",
+    "axios": "^1.6.7",
+    "express": "^4.18.2",
+    "https": "^1.0.0",
+    "react": "^18.2.0",
+    "react-aria-components": "^1.1.1",
+    "react-dom": "^18.2.0",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "buffer": "^5.5.0||^6.0.0",
+    "events": "^3.1.0",
+    "https-browserify": "^1.0.0",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10",
+    "run-script-os": "^1.1.6",
+    "stream-http": "^3.1.0",
+    "typescript": "^5.3.3",
+    "url": "^0.11.0"
+  }
+}

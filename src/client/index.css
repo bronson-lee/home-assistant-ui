@@ -1,0 +1,36 @@
+:root {
+    --border-color: white;
+    --border-radius: 4px;
+    --default-transition: all 0.15s ease-in-out;
+    --default-font-size: 14px;
+    --background-color: #1e1e1e;
+    --font-color: white;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+}
+
+main {
+    padding: 10px;
+    color: var(--font-color);
+    font-size: var(--default-font-size);
+}
+
+.react-aria-ToggleButton {
+    color: inherit;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    transition: var(--default-transition);
+    outline: none;
+    top: 5%;
+    left: 60%;
+}
+
+.react-aria-ToggleButton[data-selected] {
+    background-color: rgba(255, 255, 0, 0.50);
+}

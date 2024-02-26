@@ -1,0 +1,15 @@
+.card {
+    background-color: #1010108a;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: end;
+}
+
+.card span {
+    align-self: center;
+}
