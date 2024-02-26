@@ -1,4 +1,5 @@
 .card {
+
     background-color: #1010108a;
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
@@ -12,4 +13,5 @@
 
 .card span {
     align-self: center;
+    text-align: center;
 }

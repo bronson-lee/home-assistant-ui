@@ -7,7 +7,8 @@
     "clean": "run-script-os",
     "clean:win32": "if exist src/server/dist rmdir /s /q src\\server\\dist",
     "clean:default": "rm -rf ./src/server/dist",
-    "dist": "parcel build ./src/client/index.html --no-cache --dist-dir ./src/server/dist --public-url ./",
+    "dist": "parcel build --no-cache",
+    "dev": "yarn clean && parcel serve ./src/client/index.html -p 8080 --dist-dir ./src/server/dist",
     "start": "node ./src/server/index.js"
   },
   "author": "",
@@ -33,5 +34,12 @@
     "stream-http": "^3.1.0",
     "typescript": "^5.3.3",
     "url": "^0.11.0"
+  },
+  "targets" : {
+    "default": {
+      "source": "./src/client/index.html",
+      "distDir": "./src/server/dist",
+      "publicUrl": "./"
+    }
   }
 }
