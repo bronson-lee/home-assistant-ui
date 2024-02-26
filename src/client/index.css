@@ -5,6 +5,7 @@
     --default-font-size: 14px;
     --background-color: #1e1e1e;
     --font-color: white;
+    --font-family: Sans-serif
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: var(--background-color);
+    font-family: var(--font-family);
 }
 
 main {
@@ -20,11 +22,18 @@ main {
     font-size: var(--default-font-size);
 }
 
+.app {
+    display: flex;
+    gap: 10px;
+}
+
 .react-aria-ToggleButton {
+    display: flex;
     color: inherit;
     position: absolute;
     background-color: transparent;
     border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
     transition: var(--default-transition);
     outline: none;
     top: 5%;
@@ -32,5 +41,5 @@ main {
 }
 
 .react-aria-ToggleButton[data-selected] {
-    background-color: rgba(255, 255, 0, 0.50);
+    background-color: rgba(255, 255, 0, 0.75);
 }

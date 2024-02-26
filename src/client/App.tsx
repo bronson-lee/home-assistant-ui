@@ -10,7 +10,8 @@ export default function App() {
         console.log(entities)
     }, [entities])
 
-    return <div>
+    return <div className='app'>
         <LightCard entity={entities[57]} />
+        <LightCard entity={entities[58]} />
     </div>
 }
