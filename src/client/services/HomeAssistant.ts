@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
 import { HOME_ASSISTANT_BASE_URL, LONG_LIVED_TOKEN } from '../config.json'
-const https = require('https');
+import https from 'https';
 
 const apiRequestor : AxiosInstance = axios.create({
     baseURL: HOME_ASSISTANT_BASE_URL,
@@ -8,9 +8,7 @@ const apiRequestor : AxiosInstance = axios.create({
         Authorization: `Bearer ${LONG_LIVED_TOKEN}`
     },
     httpsAgent: new https.Agent({
-        rejectUnauthorized: false,
-        requestCert: false,
-        agent: false,
+        rejectUnauthorized: false
     })
 })
 
@@ -18,6 +16,11 @@ const defaultReturn = ({data} : AxiosResponse) => data
 
 export const getStates = () : Promise<Entity[]> => {
     return apiRequestor.get('/api/states')
+    .then(defaultReturn)
+}
+
+export const setEntityState = (entity_id, state) => {
+    return apiRequestor.post(`/api/states/${entity_id}`, state)
     .then(defaultReturn)
 }
 

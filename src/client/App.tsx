@@ -6,12 +6,8 @@ export default function App() {
 
     const { entities } = useWebSocket()
 
-    useEffect(() => {
-        console.log(entities)
-    }, [entities])
-
     return <div className='app'>
-        <LightCard entity={entities[57]} />
         <LightCard entity={entities[58]} />
+        <LightCard entity={entities[59]} />
     </div>
 }
