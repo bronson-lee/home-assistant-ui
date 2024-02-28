@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getStates } from '../services/HomeAssistant'
 
 export default function useWebSocket() {
@@ -20,7 +20,7 @@ export default function useWebSocket() {
         getStates()
         .then(setEntities)
 
-        const websocket = new WebSocket("wss://localhost:8123/api/websocket");
+        const websocket = new WebSocket("ws://localhost:8123/api/websocket");
 
         websocket.onopen = (event) => {
             websocket.send(JSON.stringify(authMessage));

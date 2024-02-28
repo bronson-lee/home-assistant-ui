@@ -14,7 +14,7 @@ declare type EntityContext = {
 }
 
 declare type LightEntityAttributes = {
-    brightness: unknown
+    brightness: number | null
     color_mode: unknown
     device_id: string
     friendly_name: string
