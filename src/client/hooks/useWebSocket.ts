@@ -17,6 +17,10 @@ export default function useWebSocket() {
     }
 
     useEffect(() => {
+        console.log(entities)
+    }, [entities])
+
+    useEffect(() => {
         getStates()
         .then(setEntities)
 
