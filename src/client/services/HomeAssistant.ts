@@ -28,3 +28,8 @@ export const callService = (domain, service, service_data) => {
     return apiRequestor.post(`/api/services/${domain}/${service}`, service_data)
     .then(defaultReturn)
 }
+
+export const getServices = () : Promise<any[]> => {
+    return apiRequestor.get(`/api/services`)
+    .then(defaultReturn)
+}

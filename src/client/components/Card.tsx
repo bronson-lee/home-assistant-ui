@@ -69,12 +69,11 @@ export const LightCard = ({entity} : LightCardProps) : React.ReactElement | null
         </ToggleButton>
         <Modal isOpen={isOpen} onOpenChange={setOpen} isDismissable>
             <Dialog>
-                <Heading slot='title'>MEMES</Heading>
-                <Slider maxValue={255} value={brightness || 0} onChange={setBrightness} >
-                    <Label>Brightness</Label>
+                <Heading slot='title'>Brightness</Heading>
+                <Slider maxValue={255} value={brightness || 0} onChange={setBrightness} orientation="vertical" >
                     <SliderOutput />
                     <SliderTrack>
-                        <SliderThumb />
+                        <div className='fill-area' style={{height: `${Math.round((brightness || 0) / 2.55)}%`}} />
                     </SliderTrack>
                 </Slider>
             </Dialog>
